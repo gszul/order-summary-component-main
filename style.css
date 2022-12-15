@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:root {
+    --accent-color: hsl(225, 100%, 94%);
+    --light-accent-color: hsla(225, 100%, 94%, .3);
+    --complementary-color: hsl(245, 75%, 52%);
+    --dominant-color: hsl(225, 100%, 98%);
+    --primary-text-color: hsl(224, 23%, 55%);
+    --secondary-text-color: hsl(223, 47%, 23%);
+
+    font-family: "Red Hat Display", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+} 
+
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--accent-color);
+    background-image: url("./images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 50%;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+article {
+    min-width: 327px;
+    margin: 1.5rem;
+    padding-bottom: 2rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--dominant-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--secondary-text-color);
+    letter-spacing: .04em;
+}
+
+.wrapper {
+    width: 100%;
+    padding-inline: 2rem;
+}
+
+.description {
+    font-size: .95rem;
+    color: var(--primary-text-color);
+}
+
+.plan {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    text-align: left;
+    column-gap: 1rem;
+    font-size: .9rem;
+    background-color: var(--light-accent-color);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.plan__icon {
+    grid-area: 1 / 1 / 3 / 2;
+}
+
+.plan__type {
+    color: var(--secondary-text-color);
+    font-weight: 700;
+}
+
+.plan__price {
+    color: var(--primary-text-color);
+}
+
+.plan__change {
+    grid-area: 1 / -1 / 3 / -2;
+    align-self: center;
+    font-weight: 700;
+    color: var(--complementary-color);
+}
+
+.order__proceed {
+    width: 100%;
+    padding-block: 1rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 900;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: var(--complementary-color);
+    color: var(--dominant-color);
+    box-shadow: 0 15px 15px var(--accent-color);
+}
+
+.order__cancel {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    font-weight: 900;
+}
+
+@media only screen and (min-width: 500px) {
+    body {
+        background-image: url("./images/pattern-background-desktop.svg");
+    }
+}
