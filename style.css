@@ -16,8 +16,9 @@ img {
 
 :root {
     --accent-color: hsl(225, 100%, 94%);
-    --light-accent-color: hsla(225, 100%, 94%, .3);
+    --accent-light-color: hsla(225, 100%, 94%, .35);
     --complementary-color: hsl(245, 75%, 52%);
+    --complementary-hover-color: hsl(245, 75%, 62%);
     --dominant-color: hsl(225, 100%, 98%);
     --primary-text-color: hsl(224, 23%, 55%);
     --secondary-text-color: hsl(223, 47%, 23%);
@@ -40,21 +41,23 @@ body {
 .flex {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 article {
     min-width: 327px;
+    max-width: 450px;
     margin: 1.5rem;
-    padding-bottom: 2rem;
     border-radius: 20px;
     overflow: hidden;
     background-color: var(--dominant-color);
     text-align: center;
+    font-size: .95rem;
 }
 
 h1 {
-    font-size: 1.3rem;
+    margin-block-start: .5em;
+    font-size: 1.5em;
     font-weight: 900;
     color: var(--secondary-text-color);
     letter-spacing: .04em;
@@ -63,11 +66,12 @@ h1 {
 .wrapper {
     width: 100%;
     padding-inline: 2rem;
+    padding-bottom: 2rem;
 }
 
 .description {
-    font-size: .95rem;
     color: var(--primary-text-color);
+    line-height: 1.7em;
 }
 
 .plan {
@@ -76,9 +80,9 @@ h1 {
     text-align: left;
     column-gap: 1rem;
     font-size: .9rem;
-    background-color: var(--light-accent-color);
+    background-color: var(--accent-light-color);
     border-radius: 10px;
-    padding: 1rem;
+    padding: 1em;
 }
 
 .plan__icon {
@@ -87,7 +91,7 @@ h1 {
 
 .plan__type {
     color: var(--secondary-text-color);
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .plan__price {
@@ -101,6 +105,11 @@ h1 {
     color: var(--complementary-color);
 }
 
+.plan__change:hover {
+    color: var(--complementary-hover-color);
+    text-decoration: none;
+}
+
 .order__proceed {
     width: 100%;
     padding-block: 1rem;
@@ -112,16 +121,44 @@ h1 {
     background-color: var(--complementary-color);
     color: var(--dominant-color);
     box-shadow: 0 15px 15px var(--accent-color);
+    cursor: pointer;
+}
+
+.order__proceed:hover {
+    background-color: var(--complementary-hover-color);
 }
 
 .order__cancel {
     text-decoration: none;
     color: var(--primary-text-color);
-    font-weight: 900;
+    font-weight: 700;
 }
 
-@media only screen and (min-width: 500px) {
+.order__cancel:hover {
+    color: var(--secondary-text-color)
+}
+
+@media only screen and (min-width: 440px) {
     body {
         background-image: url("./images/pattern-background-desktop.svg");
     }
+
+    article {
+        font-size: 1rem;
+    }
+
+    h1 {
+        margin-block-start: 1em;
+    }
+
+    .wrapper {
+        padding-inline: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .plan {
+        padding: 1.5em;
+    }
+
+
 }
